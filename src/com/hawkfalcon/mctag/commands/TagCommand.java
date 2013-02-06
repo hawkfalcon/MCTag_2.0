@@ -16,7 +16,7 @@ public class TagCommand implements CommandExecutor {
 	
 	@Override
 	public boolean onCommand(CommandSender sender, Command cmd, String commandLabel, String[] args) {
-		if (cmd.getName().equalsIgnoreCase("tag")||cmd.getName().equalsIgnoreCase("mctag")) {
+		if (cmd.getName().equalsIgnoreCase("tag")) {
 			
 		}
 		return false;
