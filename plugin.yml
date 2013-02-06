@@ -1,6 +1,8 @@
 name: MCTag
 version: 2.0
 main: me.hawkfalcon.mctag.MCTag      
+authors: [hawkfalcon, gomeow]
+website: http://dev.bukkit.org/server-mods/put-slug-here/
 permissions:  
     mctag.tag:
        description: Allows use of /tag
