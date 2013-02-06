@@ -1,17 +1,13 @@
 package com.hawkfalcon.mctag;
 
-import java.io.File;
 import java.util.logging.Level;
 import java.util.logging.Logger;
 
-import org.bukkit.command.CommandExecutor;
 import org.bukkit.event.Listener;
 import org.bukkit.plugin.PluginManager;
 import org.bukkit.plugin.java.JavaPlugin;
 
-import com.hawkfalcon.mctag.commands.TagCommand;
 import com.hawkfalcon.mctag.listeners.TagListener;
-import com.hawkfalcon.mctag.util.TagPlayer;
 import com.hawkfalcon.mctag.util.TagUtil;
 
 public class MCTag extends JavaPlugin {
@@ -29,21 +25,15 @@ public class MCTag extends JavaPlugin {
 
 	@Override
 	public void onEnable() {
-		final File f = new File(getDataFolder(), "config.yml");
-		if (!f.exists()){
-			saveDefaultConfig();
-		}
-		try {
+		saveDefaultConfig();
 			util = new TagUtil();
 			pm = getServer().getPluginManager();
 			log = getLogger();
 			pm.registerEvents(new TagListener(), this);
 			//getCommand("Tag").setExecutor(TagCommand);
 
-			// new MetricsLite(this).start();
+			//new MetricsLite(this).start();
 
-		} catch (Exception e) {
 			getLogger().log(Level.SEVERE, "MCTag failed to start!");
-		}
 	}
 }
