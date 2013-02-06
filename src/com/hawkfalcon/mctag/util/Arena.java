@@ -1,5 +1,7 @@
 package com.hawkfalcon.mctag.util;
 
+import java.util.HashMap;
+
 import org.bukkit.Location;
 import org.bukkit.World;
 
@@ -10,6 +12,7 @@ public class Arena {
 	String name;
 	ArenaGameType type = ArenaGameType.NORMAL;
 	GameState state = GameState.OVER;
+	HashMap<String, PlayerState> players = new HashMap<String, PlayerState>();
 	
 	public Arena(String n) {
 		this.name = n;
@@ -47,6 +50,31 @@ public class Arena {
 	}
 	public GameState getGameState() {
 		return this.state;
+	}
+	
+	public boolean addPlayer(String p) {
+		if(this.players.containsKey(p)) {
+			return false;
+		}
+		this.players.put(p, PlayerState.INLOBBY);
+		return true;
+	}
+	public boolean removePlayer(String p) {
+		if(this.players.containsKey(p)) {
+			this.players.remove(p);
+			return true;
+		}
+		return false;
+	}
+	public void clearPlayers() {
+		this.players.clear();
+	}
+	public boolean setPlayerState(String p, PlayerState ps) {
+		return true;
+		//TODO: Finish this when I can think straight
+	}
+	public HashMap<String, PlayerState> getPlayers() {
+		return this.players;
 	}
 	
 }
