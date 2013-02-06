@@ -29,7 +29,7 @@ public class MCTag extends JavaPlugin {
 		pm = getServer().getPluginManager();
 		log = getLogger();
 		pm.registerEvents(new TagListener(), this);
-		getCommand("tag").setExecutor(new TagCommand());
+		getCommand("tag").setExecutor(new TagCommand(this));
 
 		//new MetricsLite(this).start();
 
