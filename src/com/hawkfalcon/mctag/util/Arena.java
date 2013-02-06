@@ -10,6 +10,7 @@ public class Arena {
 	Location spawnPoint;
 	Location lobbyPoint;
 	String name;
+	boolean tagBacks = true;
 	ArenaGameType type = ArenaGameType.NORMAL;
 	GameState state = GameState.OVER;
 	HashMap<String, PlayerState> players = new HashMap<String, PlayerState>();
@@ -52,6 +53,13 @@ public class Arena {
 		return this.state;
 	}
 	
+	public void setTagBacks(boolean b) {
+		this.tagBacks = b;
+	}
+	public boolean getTagBacks() {
+		return this.tagBacks;
+	}
+
 	public boolean addPlayer(String p) {
 		if(this.players.containsKey(p)) {
 			return false;
