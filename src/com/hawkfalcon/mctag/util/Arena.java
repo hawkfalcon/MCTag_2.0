@@ -8,7 +8,7 @@ public class Arena {
 	Location spawnPoint;
 	Location lobbyPoint;
 	String name;
-	ArenaConfiguration config;
+	
 	
 	public Arena(String n) {
 		this.name = n;
@@ -32,12 +32,5 @@ public class Arena {
 	}
 	public Location getLobbyPoint() {
 		return this.lobbyPoint;
-	}
-	
-	public void setArenaConfiguration(ArenaConfiguration ac) {
-		this.config = ac;
-	}
-	public ArenaConfiguration getArenaConfiguration() {
-		return this.config;
 	}
 }
