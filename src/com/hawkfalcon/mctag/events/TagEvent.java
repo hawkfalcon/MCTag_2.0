@@ -5,7 +5,8 @@ import org.bukkit.event.Event;
 import org.bukkit.event.HandlerList;
 
 public class TagEvent extends Event {
-
+	
+	private static HandlerList handlers = new HandlerList();
 	private final Player tagged;
 	private final Player tagger;
 	
@@ -25,8 +26,10 @@ public class TagEvent extends Event {
 	
 	@Override
 	public HandlerList getHandlers() {
-		// TODO Auto-generated method stub
-		return null;
+		return handlers;
+	}
+	public static HandlerList getHandlerList() {
+		return handlers;
 	}
 	
 }
