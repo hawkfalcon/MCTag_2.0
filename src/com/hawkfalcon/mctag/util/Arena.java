@@ -8,7 +8,8 @@ public class Arena {
 	Location spawnPoint;
 	Location lobbyPoint;
 	String name;
-	
+	ArenaGameType type = ArenaGameType.NORMAL;
+	GameState state = GameState.OVER;
 	
 	public Arena(String n) {
 		this.name = n;
@@ -33,4 +34,19 @@ public class Arena {
 	public Location getLobbyPoint() {
 		return this.lobbyPoint;
 	}
+	
+	public void setArenaGameType(ArenaGameType agt) {
+		this.type = agt;
+	}
+	public ArenaGameType getArenaGameType() {
+		return this.type;
+	}
+	
+	public void setGameState(GameState gs) {
+		this.state = gs;
+	}
+	public GameState getGameState() {
+		return this.state;
+	}
+	
 }
