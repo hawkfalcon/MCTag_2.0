@@ -7,3 +7,6 @@ permissions:
     mctag.tag:
        description: Allows use of /tag
        default: true
+commands:
+  tag:
+    desctiption: All MCTag commands

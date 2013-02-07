@@ -16,7 +16,6 @@ public class CreateCommand {
 	public void execute(CommandSender cs, String[] args) {
 		if(args.length == 2) {
 			String arenaName = args[1];
-			plugin.util.getArenas().set(arenaName+".tagBacks", true);
 			for(String name:plugin.util.getArenas().getKeys(false)) {
 				if(name.toLowerCase().equalsIgnoreCase(arenaName)) {
 					cs.sendMessage(ChatColor.RED+"There is already an arena named that!");
