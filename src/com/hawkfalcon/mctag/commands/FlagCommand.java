@@ -17,11 +17,11 @@ public class FlagCommand {
 
 	public void execute(CommandSender cs, String[] args) {
 		String arenaName = args[1].toLowerCase();
-		if(!plugin.util.getArenas().getKeys(false).contains(arenaName)) {
-			cs.sendMessage(ChatColor.RED+"There is no arena named that!");
-			return;
-		}
 		if(cs.hasPermission("mctag.arena.flag")) {
+			if(!plugin.util.getArenas().getKeys(false).contains(arenaName)) {
+				cs.sendMessage(ChatColor.RED+"There is no arena named that!");
+				return;
+			}
 			if(args.length == 3) {
 				if(cs instanceof Player) {
 					Player p = (Player) cs;
