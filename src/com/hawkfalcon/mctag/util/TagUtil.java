@@ -4,12 +4,9 @@ import java.io.File;
 import java.io.IOException;
 import java.util.logging.Level;
 
-import org.bukkit.Bukkit;
 import org.bukkit.ChatColor;
-import org.bukkit.command.CommandSender;
 import org.bukkit.configuration.file.FileConfiguration;
 import org.bukkit.configuration.file.YamlConfiguration;
-import org.bukkit.entity.Player;
 
 import com.hawkfalcon.mctag.MCTag;
 
@@ -53,11 +50,11 @@ public class TagUtil {
 		return ChatColor.translateAlternateColorCodes('&', msg);
 	}
     //used to send messages in response to a command
-	public void message(CommandSender commandsender, int messageNumber){
+	/*public void message(CommandSender commandsender, int messageNumber){
 		String message = MCTag.vars.numberToMessage(messageNumber);
 		commandsender.sendMessage(parseColors("&f[&cMCTag&f] " + (message)));
 
-	}
+	}*/
 
 
 }
