@@ -22,8 +22,11 @@ public class TagCommand implements CommandExecutor {
 			}
 			else {
 				if(args[0].equalsIgnoreCase("create")) {
-					
+					new CreateCommand(plugin).execute(cs,args);
 					return true;
+				}
+				if(args[0].equalsIgnoreCase("flag")) {
+					new FlagCommand(plugin).execute(cs,args);
 				}
 			}
 		}
