@@ -15,7 +15,7 @@ public class CreateCommand {
 
 	public void execute(CommandSender cs, String[] args) {
 		if(args.length == 2) {
-			String arenaName = args[1];
+			String arenaName = args[1].toLowerCase();
 			for(String name:plugin.util.getArenas().getKeys(false)) {
 				if(name.toLowerCase().equalsIgnoreCase(arenaName)) {
 					cs.sendMessage(ChatColor.RED+"There is already an arena named that!");
@@ -25,12 +25,12 @@ public class CreateCommand {
 			plugin.util.getArenas().set(arenaName+".type", "normal");
 			plugin.util.getArenas().set(arenaName+".tagBacks", true);
 			plugin.util.saveArenas();
-			cs.sendMessage(ChatColor.GREEN+"Sucessfully created arena!s");
+			cs.sendMessage(ChatColor.GREEN+"Sucessfully created arena!");
 			return;
 		}
 		else {
 			cs.sendMessage(ChatColor.RED+"Wrong number of arguments!");
-			cs.sendMessage(ChatColor.RED+"Usage: /<command> <arenaName>");
+			cs.sendMessage(ChatColor.RED+"Usage: /tag create <arenaName>");
 			return;
 		}
 	}

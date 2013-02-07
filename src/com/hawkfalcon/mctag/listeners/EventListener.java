@@ -1,8 +1,5 @@
 package com.hawkfalcon.mctag.listeners;
 
-import java.io.File;
-
-import org.bukkit.configuration.file.FileConfiguration;
 import org.bukkit.event.EventHandler;
 import org.bukkit.event.Listener;
 import org.bukkit.event.block.BlockBreakEvent;
