@@ -17,9 +17,15 @@ public class MCTag extends JavaPlugin {
 	Listener listener;
 
 	String commands = "Commands: \n /tag <join|leave> - join or leave the game \n /tag <start|stop> - start and stop game \n /tag it - view tagged player \n /tag players - view joined playrs \n /tag tagback <allow|forbid> - allow and forbid tagback \n /tag freezetag <on|off> - turn freeze tag on and off \n /tag reload - reloads the config \n /tag setspawn - set arena spawnpoint";
+<<<<<<< HEAD
 	//placeholder, replaced with hashmap used to store playing players
 	public ArrayList playersPlaying;
 	public static TagUtil util;
+=======
+
+
+	public TagUtil util;
+>>>>>>> Un-Static util
 	public static GlobalVariables vars;
 	public static PluginManager pm;
 
