@@ -1,4 +1,4 @@
-package com.hawkfalcon.mctag;
+package com.hawkfalcon.mctag.util;
 
 
 

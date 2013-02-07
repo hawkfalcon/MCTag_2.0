@@ -8,6 +8,7 @@ import org.bukkit.plugin.java.JavaPlugin;
 
 import com.hawkfalcon.mctag.commands.TagCommand;
 import com.hawkfalcon.mctag.listeners.TagListener;
+import com.hawkfalcon.mctag.util.GlobalVariables;
 import com.hawkfalcon.mctag.util.TagUtil;
 
 public class MCTag extends JavaPlugin {
