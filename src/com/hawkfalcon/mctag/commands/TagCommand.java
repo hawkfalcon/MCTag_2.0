@@ -15,11 +15,24 @@ public class TagCommand implements CommandExecutor {
 	}
 	
 	@Override
-	public boolean onCommand(CommandSender sender, Command cmd, String commandLabel, String[] args) {
-		if (cmd.getName().equalsIgnoreCase("tag")) {
-			
+	public boolean onCommand(CommandSender cs, Command cmdObj, String label, String[] args) {
+		if (cmdObj.getName().equalsIgnoreCase("tag")) {
+			if(args.length == 0) {
+				sendHelp(cs);
+			}
+			else {
+				if(args[0].equalsIgnoreCase("create")) {
+					
+					return true;
+				}
+			}
 		}
 		return false;
+	}
+
+	public void sendHelp(CommandSender cs) {
+		// TODO Auto-generated method stub
+		
 	}
 
 }
