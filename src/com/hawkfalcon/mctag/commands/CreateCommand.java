@@ -1,5 +1,6 @@
 package com.hawkfalcon.mctag.commands;
 
+import org.bukkit.ChatColor;
 import org.bukkit.command.CommandSender;
 
 import com.hawkfalcon.mctag.MCTag;
@@ -16,12 +17,22 @@ public class CreateCommand {
 		if(args.length == 2) {
 			String arenaName = args[1];
 			plugin.util.getArenas().set(arenaName+".tagBacks", true);
+			for(String name:plugin.util.getArenas().getKeys(false)) {
+				if(name.toLowerCase().equalsIgnoreCase(arenaName)) {
+					cs.sendMessage(ChatColor.RED+"There is already an arena named that!");
+					return;
+				}
+			}
 			plugin.util.getArenas().set(arenaName+".type", "normal");
+			plugin.util.getArenas().set(arenaName+".tagBacks", true);
 			plugin.util.saveArenas();
-			//TODO: Send success message
+			cs.sendMessage(ChatColor.GREEN+"Sucessfully created arena!s");
+			return;
 		}
 		else {
-			//TODO: Send not enough args message
+			cs.sendMessage(ChatColor.RED+"Wrong number of arguments!");
+			cs.sendMessage(ChatColor.RED+"Usage: /<command> <arenaName>");
+			return;
 		}
 	}
 
