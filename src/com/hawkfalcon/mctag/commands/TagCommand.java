@@ -21,16 +21,12 @@ public class TagCommand implements CommandExecutor {
 				sendHelp(cs);
 			}
 			else {
-				if(args[0].equalsIgnoreCase("create")) {
-					new CreateCommand(plugin).execute(cs,args);
-					return true;
-				}
-				if(args[0].equalsIgnoreCase("flag")) {
-					new FlagCommand(plugin).execute(cs,args);
-				}
+				if(args[0].equalsIgnoreCase("create")) new CreateCommand(plugin).execute(cs,args);
+				else if(args[0].equalsIgnoreCase("flag")) new FlagCommand(plugin).execute(cs,args);
+				else if(args[0].equalsIgnoreCase("join")) new JoinCommand(plugin).execute(cs,args);
 			}
 		}
-		return false;
+		return true;
 	}
 
 	public void sendHelp(CommandSender cs) {

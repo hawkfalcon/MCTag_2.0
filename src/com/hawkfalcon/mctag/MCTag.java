@@ -1,6 +1,7 @@
 package com.hawkfalcon.mctag;
 
 import java.util.ArrayList;
+import java.util.HashMap;
 import java.util.logging.Logger;
 
 import org.bukkit.event.Listener;
@@ -9,6 +10,7 @@ import org.bukkit.plugin.java.JavaPlugin;
 
 import com.hawkfalcon.mctag.commands.TagCommand;
 import com.hawkfalcon.mctag.listeners.TagListener;
+import com.hawkfalcon.mctag.util.ErrorMessage;
 import com.hawkfalcon.mctag.util.GlobalVariables;
 import com.hawkfalcon.mctag.util.TagUtil;
 
@@ -19,7 +21,7 @@ public class MCTag extends JavaPlugin {
 	String commands = "Commands: \n /tag <join|leave> - join or leave the game \n /tag <start|stop> - start and stop game \n /tag it - view tagged player \n /tag players - view joined playrs \n /tag tagback <allow|forbid> - allow and forbid tagback \n /tag freezetag <on|off> - turn freeze tag on and off \n /tag reload - reloads the config \n /tag setspawn - set arena spawnpoint";
 	//placeholder, replaced with hashmap used to store playing players
 	public ArrayList<String> playersPlaying = new ArrayList<String>();
-
+	public HashMap<String,Game> games = new HashMap<String,Game>();
 
 	public TagUtil util;
 	public static GlobalVariables vars;
@@ -36,7 +38,17 @@ public class MCTag extends JavaPlugin {
 		getCommand("tag").setExecutor(new TagCommand(this));
 
 		//new MetricsLite(this).start();
-
-		//getLogger().log(Level.SEVERE, "MCTag failed to start!");
+	}
+	
+	public ErrorMessage makeNewGame(String name) {
+		Game g = new Game(this, name);
+		this.games.put(name,g);
+		return g.loadArena();
+	}
+	public boolean checkGameExists(String name) {
+		return games.containsKey(name);
+	}
+	public boolean checkArenaExists(String name) {
+		return util.getArenas().getKeys(false).contains(name);
 	}
 }
