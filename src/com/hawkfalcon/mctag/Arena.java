@@ -4,14 +4,20 @@ import java.util.ArrayList;
 
 import org.bukkit.configuration.ConfigurationSection;
 import org.bukkit.entity.Player;
+import org.bukkit.event.EventHandler;
+import org.bukkit.event.Listener;
 
-public class Arena {
+import com.hawkfalcon.mctag.events.TagEvent;
 
+public class Arena implements Listener {
+
+	private final MCTag					plugin;
 	private final ArrayList<Player> 	players = new ArrayList<Player>();
 	private final ConfigurationSection 	config;
 	private final String 				name;
 	
-	public Arena(String name, ConfigurationSection sect) {
+	public Arena(MCTag plugin, String name, ConfigurationSection sect) {
+		this.plugin = plugin;
 		this.name = name;
 		this.config = sect;
 	}
@@ -26,5 +32,11 @@ public class Arena {
 		players.remove(p);
 		return true;
 	}
+	
+	@EventHandler
+	public void onTag(TagEvent event) {
+		
+	}
+	
 	
 }
