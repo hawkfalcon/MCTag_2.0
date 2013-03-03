@@ -28,7 +28,9 @@ public class Arena implements Listener {
 		return true;
 	}
 	public boolean removePlayer(Player p) {
-		return players.remove(p);
+		if(!players.contains(p)) return false;
+		players.remove(p);
+		return true;
 	}
 	
 	@EventHandler
