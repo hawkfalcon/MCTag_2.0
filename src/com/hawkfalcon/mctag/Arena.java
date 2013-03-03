@@ -24,7 +24,7 @@ public class Arena implements Listener {
 	
 	public boolean addPlayer(Player p) {
 		if(players.contains(p)) return false;
-		players.add(p);
+		players.add(p); //testetstest
 		return true;
 	}
 	public boolean removePlayer(Player p) {
