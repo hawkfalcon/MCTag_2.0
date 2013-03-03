@@ -16,12 +16,12 @@ public class JoinCommand {
 		if(cs instanceof Player) {
 			if(args.length == 2) {
 				String arena = args[1];
-				if(plugin.checkGameExists(arena)) {
+				if(plugin.checkGameRunning(arena)) {
 					//Game in session
 				}
 				else {
 					if(plugin.checkArenaExists(arena)) {
-						plugin.makeNewGame(arena);
+						plugin.startNewGame(arena);
 						//Arena exists
 					}
 					else {

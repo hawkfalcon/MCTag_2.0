@@ -1,7 +1,5 @@
 package com.hawkfalcon.mctag;
 
-import java.util.ArrayList;
-
 import org.bukkit.configuration.ConfigurationSection;
 import org.bukkit.entity.Player;
 import org.bukkit.event.EventHandler;
@@ -12,7 +10,6 @@ import com.hawkfalcon.mctag.events.TagEvent;
 public class Arena implements Listener {
 
 	private final MCTag					plugin;
-	private final ArrayList<Player> 	players = new ArrayList<Player>();
 	private final ConfigurationSection 	config;
 	private final String 				name;
 	
@@ -21,15 +18,14 @@ public class Arena implements Listener {
 		this.name = name;
 		this.config = sect;
 	}
-	
 	public boolean addPlayer(Player p) {
-		if(players.contains(p)) return false;
-		players.add(p); //testetstest
+		if(plugin.getPlayerMap().containsKey(p.getName())) return false;
+		plugin.getPlayerMap().put(p.getName(), name);
 		return true;
 	}
 	public boolean removePlayer(Player p) {
-		if(!players.contains(p)) return false;
-		players.remove(p);
+		if(!plugin.getPlayerMap().containsKey(p.getName())) return false;
+		plugin.getPlayerMap().remove(p.getName());
 		return true;
 	}
 	

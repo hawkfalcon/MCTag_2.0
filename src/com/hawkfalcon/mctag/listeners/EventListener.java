@@ -17,7 +17,7 @@ public class EventListener implements Listener {
 	    //stop placing while ingame
 	 public void onBlockPlace(BlockPlaceEvent event) {
 	        String player = event.getPlayer().getName();
-	        if (plugin.playersPlaying.contains(player)) {
+	        if (plugin.getPlayerList().contains(player)) {
 	            event.setCancelled(true);
 	        }
 	    }
@@ -26,7 +26,7 @@ public class EventListener implements Listener {
 	    @EventHandler
 	    public void onBlockBreak(BlockBreakEvent event) {
 	        String player = event.getPlayer().getName();
-	        if (plugin.playersPlaying.contains(player)) {
+	        if (plugin.getPlayerList().contains(player)) {
 	            event.setCancelled(true);
 	        }
 	    }
@@ -35,7 +35,7 @@ public class EventListener implements Listener {
 	    @EventHandler
 	    public void onInventoryClick(InventoryClickEvent event) {
 	        String player = event.getWhoClicked().getName();
-	        if (plugin.playersPlaying.contains(player)) {
+	        if (plugin.getPlayerList().contains(player)) {
 	            event.setCancelled(true);
 	        }
 	    }

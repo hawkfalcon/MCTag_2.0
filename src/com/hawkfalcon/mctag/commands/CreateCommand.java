@@ -25,7 +25,7 @@ public class CreateCommand {
 			plugin.util.getArenas().set(arenaName+".type", "normal");
 			plugin.util.getArenas().set(arenaName+".tagBacks", true);
 			plugin.util.saveArenas();
-			cs.sendMessage(ChatColor.GREEN+"Sucessfully created arena!");
+			cs.sendMessage(ChatColor.GREEN+"Successfully created arena!");
 			return;
 		}
 		else {
